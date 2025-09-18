@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,6 +37,9 @@ public class UserInfo {
     private Set<Role> roles;
     private String lieuDeNaissance;
     private Date dateDeNaissance;
+    @ManyToOne
+    @JoinColumn(name = "publicServiceId") 
+    private PublicService servicePublique;
     private String password;
     private boolean isEnabled;
     public Object map(Object object) {
