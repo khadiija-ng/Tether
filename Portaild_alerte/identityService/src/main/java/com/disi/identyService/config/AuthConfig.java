@@ -44,7 +44,7 @@ public class AuthConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/users/role","/users/register", "/users/login", "/users/validate", "/users/role/{id}",
+                        .requestMatchers("/servicePublic/*","/users/role","/users/register", "/users/login", "/users/validate", "/users/role/{id}",
                                 "/users/{id}/roles", "/users/{userId}/role", "/users/all/{page}/{size}", "/users/{userId}/roles", "/users/{userId}/role", "/users/{userId}", "/users/role/{id}", "/users/refresh-token")
                         .permitAll() // Permettre l'accès public à ces routes
                         .anyRequest().authenticated() // authentification requise pour toutes les autres requêtes par
