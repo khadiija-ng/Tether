@@ -13,15 +13,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
 public class Actualite {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ActualiteId;
-    private String ActualiteImage;
-    private String ActualiteTitle;
-    private String ActualiteDescription;
-    private Date ActualiteDate;
+    private int actualiteId;
+    private String actualiteImage;
+    private String actualiteTitle;
+    private String actualiteDescription;
+    private Date actualiteDate;
 
 }
 

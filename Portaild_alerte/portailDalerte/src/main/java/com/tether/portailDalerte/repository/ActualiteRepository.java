@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.tether.portailDalerte.model.Actualite;
 
 public interface ActualiteRepository extends JpaRepository<Actualite, Integer> {
-   Optional<Actualite> findById(int id);
-   Actualite findByActualiteId(int id);
+   Optional<Actualite> findById(int actualiteId);
+   Actualite findByActualiteId(int actualiteId);
 }
