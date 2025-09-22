@@ -24,3 +24,16 @@ public class Actualite {
     private Date ActualiteDate;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
