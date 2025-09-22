@@ -24,7 +24,7 @@ public class ContactService {
 
 
     public Contact getContact(int id){
-        Contact conn = repository.getContactById(id);
+        Contact conn = repository.getContactByContactId(id);
         return conn;
     }
     

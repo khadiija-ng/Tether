@@ -41,7 +41,7 @@ public class TypeAlerteController {
 
     @GetMapping("/{id}")
     @CrossOrigin(origins = "*")
-    public Optional<TypeAlerte> getTypeAlerte(@PathVariable int id) {
+    public TypeAlerte getTypeAlerte(@PathVariable int id) {
         return service.getTypeAlerteById(id);
     }
 

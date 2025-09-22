@@ -21,19 +21,16 @@ public class TypeAlerteService {
         return repository.findAll();
     }
 
-    public Optional<TypeAlerte> getTypeAlerteById(int typeAlerteId) {
-        return repository.findById(typeAlerteId);
+    public TypeAlerte getTypeAlerteById(int typeAlerteId) {
+        return repository.findByTypeAlerteId(typeAlerteId);
     }
 
     public TypeAlerte updateTypeAlerte(int id, TypeAlerte typeAlerte) {
-        Optional<TypeAlerte> optionalTa = repository.findById(id);
-        if (optionalTa.isPresent()) {
-            TypeAlerte ta = optionalTa.get();
-            ta.setTypeAlerteName(typeAlerte.getTypeAlerteName());
-            ta.setTypeAlerteDescription(typeAlerte.getTypeAlerteDescription());
-            return repository.save(ta);
-        }
-        return null;
+        TypeAlerte ta = repository.findByTypeAlerteId(id);
+        ta.setTypeAlerteName(typeAlerte.getTypeAlerteName());
+        ta.setTypeAlerteDescription(typeAlerte.getTypeAlerteDescription());
+        return repository.save(ta);
+
     }
 
     public void deleteTypeAlerte(int id) {

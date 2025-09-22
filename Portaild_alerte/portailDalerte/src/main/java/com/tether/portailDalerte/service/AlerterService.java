@@ -24,12 +24,12 @@ public class AlerterService {
     }
 
     public Alerter getAlerte(int id) {
-        Alerter al = repository.getAlerteById(id);
+        Alerter al = repository.getAlerteByAlerterId(id);
         return al;
     }
 
     public Alerter updateAlerte(int id, Alerter al) {
-        Alerter alerte = repository.getAlerteById(id);
+        Alerter alerte = repository.getAlerteByAlerterId(id);
         alerte.setDateDesFaits(al.getDateDesFaits());
         alerte.setLieuDesFaits(al.getLieuDesFaits());
         alerte.setTypeAlerte(al.getTypeAlerte());
@@ -41,7 +41,7 @@ public class AlerterService {
     }
 
     public void deleteAlerte(int id){
-        Alerter al=repository.getAlerteById(id);
+        Alerter al=repository.getAlerteByAlerterId(id);
         repository.delete(al);
     }
 

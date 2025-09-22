@@ -6,7 +6,7 @@ import com.tether.portailDalerte.model.Contact;
 
 public interface ContactRepository extends JpaRepository<Contact, Integer> {
 
-    Contact getContactById(int id);
+    Contact getContactByContactId(int id);
 
 
 }

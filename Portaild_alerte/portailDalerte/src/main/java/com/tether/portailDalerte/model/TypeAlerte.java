@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 public class TypeAlerte {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int TypeAlerteId;
-    private String TypeAlerteName;
-    private String TypeAlerteDescription;
+    private int typeAlerteId;
+    private String typeAlerteName;
+    private String typeAlerteDescription;
 
 }
 
