@@ -11,6 +11,7 @@ import com.tether.portailDalerte.repository.TypeAlerteRepository;
 public class TypeAlerteService {
     @Autowired
     private TypeAlerteRepository repository;
+
     public String saveTypeAlerte(TypeAlerte ta) {
         repository.save(ta);
         return "Type d'alerte ajouté avec succès";
@@ -23,6 +24,7 @@ public class TypeAlerteService {
     public Optional<TypeAlerte> getTypeAlerteById(int typeAlerteId) {
         return repository.findById(typeAlerteId);
     }
+
     public TypeAlerte updateTypeAlerte(int id, TypeAlerte typeAlerte) {
         Optional<TypeAlerte> optionalTa = repository.findById(id);
         if (optionalTa.isPresent()) {
@@ -33,6 +35,7 @@ public class TypeAlerteService {
         }
         return null;
     }
+
     public void deleteTypeAlerte(int id) {
         repository.deleteById(id);
     }
