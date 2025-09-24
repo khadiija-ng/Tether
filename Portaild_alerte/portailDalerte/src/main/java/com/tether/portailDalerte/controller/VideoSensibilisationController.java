@@ -15,25 +15,25 @@ import com.tether.portailDalerte.model.VideoSensibilisation;
 import com.tether.portailDalerte.service.VideoSensibilisationService;
 
 @RestController
-@RequestMapping("/video-sensibilisation")
+@RequestMapping("/portail")
 public class VideoSensibilisationController {
 
     @Autowired
     private VideoSensibilisationService service;
 
-    @PostMapping("/add")
+    @PostMapping("/videoSensibilisation/add")
     @CrossOrigin(origins = "*")
     public String addVideo(@RequestBody VideoSensibilisation video) {
         return service.saveVideo(video);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/videoSensibilisation/all")
     @CrossOrigin(origins = "*")
     public List<VideoSensibilisation> getAllVideos() {
         return service.getAllVideos();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/videoSensibilisation/{id}")
     @CrossOrigin(origins = "*")
     public VideoSensibilisation getVideo(@PathVariable int id) {
         return service.getVideoById(id);

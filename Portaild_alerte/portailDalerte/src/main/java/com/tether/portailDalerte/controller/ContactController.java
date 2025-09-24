@@ -15,25 +15,25 @@ import com.tether.portailDalerte.model.Contact;
 import com.tether.portailDalerte.service.ContactService;
 
 @RestController
-@RequestMapping("contact/")
+@RequestMapping("/portail")
 public class ContactController {
 
     @Autowired
     private ContactService service;
 
-    @PostMapping("/add")
+    @PostMapping("/contact/add")
     @CrossOrigin(origins = "*")
     public String addNewContact(@RequestBody Contact conn) {
         return service.addContact(conn);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/contact/all")
     @CrossOrigin(origins = "*")
     public List<Contact> getAllContacts() {
         return service.getAllContact();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/contact/{id}")
     @CrossOrigin(origins = "*")
     public Contact getContact(@PathVariable int id) {
         return service.getContact(id);

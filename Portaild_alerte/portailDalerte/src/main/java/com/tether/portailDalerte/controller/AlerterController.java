@@ -21,30 +21,30 @@ import com.tether.portailDalerte.model.Alerter;
 import com.tether.portailDalerte.service.AlerterService;
 
 @RestController
-@RequestMapping("/alerte")
+@RequestMapping("/portail")
 public class AlerterController {
     @Autowired
     private AlerterService service;
 
-    @PostMapping("/add")
+    @PostMapping("/alerte/add")
     @CrossOrigin(origins = "*")
     public String addNewAlerte(@RequestBody Alerter alerte) {
         return service.saveAlerter(alerte);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/alerte/all")
     @CrossOrigin(origins = "*")
     public List<Alerter> getAllAlertes() {
         return service.allAlerte();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/alerte/{id}")
     @CrossOrigin(origins = "*")
     public Alerter getAlerter(@PathVariable int id) {
         return service.getAlerte(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/alerte/update/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Map<String, String>> updateAlerte(@PathVariable int alerterId,
             @RequestBody Alerter ps) {
@@ -60,7 +60,7 @@ public class AlerterController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/alerte/{id}")
     @CrossOrigin(origins = "*")
     public void deleteAlerte(@PathVariable("id") int id) {
         service.deleteAlerte(id);

@@ -17,37 +17,37 @@ import com.tether.portailDalerte.model.Loi;
 import com.tether.portailDalerte.service.LoisServcice;
 
 @RestController
-@RequestMapping("/loi")
+@RequestMapping("/portail")
 public class LoiController {
 
     @Autowired
     private LoisServcice service;
     
-    @PostMapping("/add")
+    @PostMapping("/loi/add")
     @CrossOrigin(origins = "*")
     public String addNewLoi(@RequestBody Loi loi) {
         return service.addLoi(loi);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/loi/all")
     @CrossOrigin(origins = "*")
     public List<Loi> getAllLois() {
         return service.getAllLois();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/loi/{id}")
     @CrossOrigin(origins = "*")
     public Loi getLoi(@PathVariable int id) {
         return service.getLoi(id);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/loi/{id}")
     @CrossOrigin(origins = "*")
     public Loi updateLoi(@PathVariable int id, @RequestBody Loi loi){
         return service.upadateLoi(id, loi);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/loi/{id}")
     @CrossOrigin(origins = "*")
     public void deleteLoi(@PathVariable int id){
         service.deleteLoi(id);

@@ -20,31 +20,31 @@ import com.tether.portailDalerte.model.TypeAlerte;
 import com.tether.portailDalerte.service.TypeAlerteService;
 
 @RestController
-@RequestMapping("/api/type-alertes")
+@RequestMapping("/portail")
 public class TypeAlerteController {
 
     @Autowired
     private TypeAlerteService service;
 
-    @PostMapping("/add")
+    @PostMapping("/typeAlerte/add")
     @CrossOrigin(origins = "*")
     public String addTypeAlerte(@RequestBody TypeAlerte ta) {
         return service.saveTypeAlerte(ta);
     }
 
-    @GetMapping("/all")
+    @GetMapping("/typeAlerte/all")
     @CrossOrigin(origins = "*")
     public List<TypeAlerte> getAllTypeAlertes() {
         return service.getAllTypeAlerte();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/typeAlerte/{id}")
     @CrossOrigin(origins = "*")
     public TypeAlerte getTypeAlerte(@PathVariable int id) {
         return service.getTypeAlerteById(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/typeAlerte/update/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Map<String, String>> updateTypeAlerte(@PathVariable int id, @RequestBody TypeAlerte ta) {
         Map<String, String> response = new HashMap<>();
@@ -58,7 +58,7 @@ public class TypeAlerteController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/typeAlerte/{id}")
     @CrossOrigin(origins = "*")
     public void deleteTypeAlerte(@PathVariable("id") int id) {
         service.deleteTypeAlerte(id);

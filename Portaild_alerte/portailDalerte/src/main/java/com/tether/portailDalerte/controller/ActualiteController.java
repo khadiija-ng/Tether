@@ -21,31 +21,31 @@ import com.tether.portailDalerte.model.Actualite;
 import com.tether.portailDalerte.service.ActualiteService;
 
 @RestController
-@RequestMapping("/api/actualites")
+@RequestMapping("/portail")
 public class ActualiteController {
     @Autowired
     private ActualiteService service;
 
-    @PostMapping("/add")
+    @PostMapping("/actualites/add")
     @CrossOrigin(origins = "*")
     public String addActualite(@RequestBody Actualite actualite) {
         service.createActualite(actualite); 
         return "Actualité ajoutée avec succès";
     }
 
-    @GetMapping("/all")
+    @GetMapping("/actualites/all")
     @CrossOrigin(origins = "*")
     public List<Actualite> getAllActualites() {
         return service.getAllActualites();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/actualites/{id}")
     @CrossOrigin(origins = "*")
     public Optional<Actualite> getActualite(@PathVariable int id) {
         return service.getActualiteById(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/actualites/update/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Map<String, String>> updateActualite(@PathVariable int id, @RequestBody Actualite actualite) {
         Map<String, String> response = new HashMap<>();
@@ -59,7 +59,7 @@ public class ActualiteController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/actualites/{id}")
     @CrossOrigin(origins = "*")
     public void deleteActualite(@PathVariable("id") int id) {
         service.deleteActualite(id);

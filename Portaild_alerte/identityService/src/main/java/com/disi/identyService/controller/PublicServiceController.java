@@ -22,32 +22,32 @@ import com.disi.identyService.model.PublicService;
 import com.disi.identyService.service.PublicServicies;
 
 @RestController
-@RequestMapping("/servicePublic")
+@RequestMapping("/users")
 public class PublicServiceController {
 
     @Autowired
     private PublicServicies service;
 
-    @PostMapping("/add")
+    @PostMapping("/servicePublic/add")
     @CrossOrigin(origins = "*")
     public String addServicePublic(@RequestBody PublicService ps) {
         return service.savePublicService(ps);
 
     }
 
-    @GetMapping("/all")
+    @GetMapping("/servicePublic/all")
     @CrossOrigin(origins = "*")
     public List<PublicService> getAllPublicServicies() {
         return service.getAllPublicServices();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/servicePublic/{id}")
     @CrossOrigin(origins = "*")
     public Optional<PublicService> getServicePublic(@PathVariable int id) {
         return service.getPublicService(id);
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/servicePublic/update/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Map<String, String>> updateServicePublic(@PathVariable int serviceId,
             @RequestBody PublicService ps) {
@@ -63,7 +63,7 @@ public class PublicServiceController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/servicePublic/{id}")
     @CrossOrigin(origins = "*")
     public void deletePublicService(@PathVariable("id") int id) {
         service.deleteServicies(id);
