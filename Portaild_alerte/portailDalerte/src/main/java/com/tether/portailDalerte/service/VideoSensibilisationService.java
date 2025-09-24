@@ -25,7 +25,7 @@ public class VideoSensibilisationService {
         VideoSensibilisation video = repository.findById(id);
         return video;
     }
-    
+
 
 
 }
