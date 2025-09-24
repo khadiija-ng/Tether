@@ -25,6 +25,11 @@ public class VideoSensibilisationService {
         VideoSensibilisation video = repository.findById(id);
         return video;
     }
+    public String deleteVideo(int id) {
+        repository.deleteById(id);
+        return "Vidéo supprimée avec succès";
+    }
+    
 
 
 }
