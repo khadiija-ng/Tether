@@ -45,20 +45,19 @@ public class AlerterController {
     }
 
     @PutMapping("/alerte/update/{id}")
-    @CrossOrigin(origins = "*")
-    public ResponseEntity<Map<String, String>> updateAlerte(@PathVariable int alerterId,
-            @RequestBody Alerter ps) {
-        Map<String, String> response = new HashMap<>();
+@CrossOrigin(origins = "*")
+public ResponseEntity<Map<String, String>> updateAlerte(@PathVariable int id, @RequestBody Alerter ps) {
+    Map<String, String> response = new HashMap<>();
 
-        try {
-            service.updateAlerte(alerterId, ps);
-            response.put("message", "Alerte mis à jour avec succès");
-            return ResponseEntity.ok(response);
-        } catch (RuntimeException e) {
-            response.put("error", "Erreur : " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-        }
+    try {
+        service.updateAlerte(id, ps); 
+        response.put("message", "Alerte mis à jour avec succès");
+        return ResponseEntity.ok(response);
+    } catch (RuntimeException e) {
+        response.put("error", "Erreur : " + e.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
+}
 
     @DeleteMapping("/alerte/{id}")
     @CrossOrigin(origins = "*")

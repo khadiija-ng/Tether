@@ -29,15 +29,15 @@ public class AlerterService {
     }
 
     public Alerter updateAlerte(int id, Alerter al) {
-        Alerter alerte = repository.getAlerteByAlerterId(id);
-        alerte.setDateDesFaits(al.getDateDesFaits());
-        alerte.setLieuDesFaits(al.getLieuDesFaits());
-        alerte.setTypeAlerte(al.getTypeAlerte());
-        alerte.setPreuves(al.getPreuves());
-        alerte.setStatus(al.getStatus());
-        alerte.setAnonyme(al.isAnonyme());
-        alerte.setMessage(al.getMessage());
-        return alerte;
+    Alerter alerte = repository.getAlerteByAlerterId(id);
+    //alerte.setDateDesFaits(al.getDateDesFaits());
+    //alerte.setLieuDesFaits(al.getLieuDesFaits());
+    //alerte.setTypeAlerte(al.getTypeAlerte());
+    //alerte.setPreuves(al.getPreuves());
+    alerte.setStatus(al.getStatus());
+    //alerte.setAnonyme(al.isAnonyme());
+    //alerte.setMessage(al.getMessage());
+    return repository.save(alerte);
     }
 
     public void deleteAlerte(int id){
