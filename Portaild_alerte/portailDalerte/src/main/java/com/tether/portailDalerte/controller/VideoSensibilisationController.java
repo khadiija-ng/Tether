@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,7 @@ public class VideoSensibilisationController {
     public VideoSensibilisation getVideo(@PathVariable int id) {
         return service.getVideoById(id);
     }
-    @GetMapping("/videoSensibilisation/delete/{id}")
+    @DeleteMapping("/videoSensibilisation/delete/{id}")
     @CrossOrigin(origins = "*")
     public String deleteVideo(@PathVariable int id) {
         return service.deleteVideo(id);
