@@ -12,7 +12,7 @@ public class RouteValidator {
 //openApiEndpoints : Il s'agit d'une liste de chemins d'API (endpoints) qui sont considérés comme non sécurisés et qui ne nécessitent pas d'authentification
     public static final List<String> openApiEndpoints = List.of(
             "/users/register",
-            "/users/token",
+            "/users/login",
             "/eureka"
             // "/users/all"
         //     "/ref/**"

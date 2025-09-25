@@ -55,7 +55,7 @@ public class AuthController {
         Authentication authenticate = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
         if (authenticate.isAuthenticated()) {
-            String accessToken = service.generateToken(authRequest.getUsername(), 1000 * 60 * 1l);
+            String accessToken = service.generateToken(authRequest.getUsername(), 1000 * 60 * 20l);
             String refreshToken = service.generateRefreshToken(authRequest.getUsername(), 1000 * 60 * 30l);
             Map<String, String> response = new HashMap<>();
             response.put("accessToken", accessToken);
