@@ -38,4 +38,9 @@ public class VideoSensibilisationController {
     public VideoSensibilisation getVideo(@PathVariable int id) {
         return service.getVideoById(id);
     }
+    @GetMapping("/videoSensibilisation/delete/{id}")
+    @CrossOrigin(origins = "*")
+    public String deleteVideo(@PathVariable int id) {
+        return service.deleteVideo(id);
+    }
 }
