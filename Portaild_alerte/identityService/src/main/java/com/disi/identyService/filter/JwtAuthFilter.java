@@ -57,6 +57,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 SecurityContext context = SecurityContextHolder.createEmptyContext();
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(user,null, user.getAuthorities());
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authToken);
                 context.setAuthentication(authToken);
                 SecurityContextHolder.setContext(context);
                 System.out.println("Token valide****************************************************");
@@ -64,6 +65,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                 System.out.println(SecurityContextHolder.getContext().getAuthentication());
             }
         }
+        
         filterChain.doFilter(request, response); // Continuer la chaîne de filtres
     }
 }
