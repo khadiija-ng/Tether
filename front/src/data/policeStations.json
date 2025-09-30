@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Commissariat central de Dakar",
+    "position": [14.6928, -17.4467],
+    "phone": "33 823 25 29 / 33 841 33 42",
+    "address": "Rue Docteur Thèze X Thiong",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 2,
+    "name": "Compagnie de la Circulation",
+    "position": [14.6930, -17.4470],
+    "phone": "33 889 82 00",
+    "address": "Dakar",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 21,
+    "name": "Commissariat central de Saint-Louis",
+    "position": [16.0179, -16.4896],
+    "phone": "33 961 12 34",
+    "address": "Place Faidherbe, Saint-Louis",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 22,
+    "name": "Commissariat de Thiès",
+    "position": [14.7900, -16.9359],
+    "phone": "33 951 23 45",
+    "address": "Avenue Malick Sy, Thiès",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 23,
+    "name": "Commissariat central de Kaolack",
+    "position": [14.1652, -16.0758],
+    "phone": "33 941 23 45",
+    "address": "Boulevard Valdiodio Ndiaye, Kaolack",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 24,
+    "name": "Commissariat central de Ziguinchor",
+    "position": [12.5647, -16.2719],
+    "phone": "33 991 23 45",
+    "address": "Avenue Jean XXIII, Ziguinchor",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 25,
+    "name": "Commissariat de Tambacounda",
+    "position": [13.7707, -13.6673],
+    "phone": "33 981 23 45",
+    "address": "Route nationale N1, Tambacounda",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 26,
+    "name": "Commissariat de Louga",
+    "position": [15.6143, -16.2249],
+    "phone": "33 971 23 45",
+    "address": "Centre-ville, Louga",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 27,
+    "name": "Commissariat de Kolda",
+    "position": [12.8859, -14.9551],
+    "phone": "33 961 98 76",
+    "address": "Quartier administratif, Kolda",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 28,
+    "name": "Commissariat de Fatick",
+    "position": [14.3446, -16.4111],
+    "phone": "33 952 34 56",
+    "address": "Avenue Coumba Castel, Fatick",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 29,
+    "name": "Commissariat de Diourbel",
+    "position": [14.6628, -16.2333],
+    "phone": "33 953 34 56",
+    "address": "Place centrale, Diourbel",
+    "hours": "24h/24, 7j/7"
+  },
+  {
+    "id": 30,
+    "name": "Commissariat de Kaffrine",
+    "position": [14.1058, -15.5467],
+    "phone": "33 954 34 56",
+    "address": "Quartier Escale, Kaffrine",
+    "hours": "24h/24, 7j/7"
+  }
+]
