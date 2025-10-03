@@ -1,11 +1,19 @@
-FROM node:16-alpine as build
-WORKDIR /front
+FROM node:16-alpine
+
+# Créer le dossier de l'application
+WORKDIR /app
+
+# Copier les fichiers package
 COPY package*.json ./
+
+# Installer les dépendances
 RUN npm install
+
+# Copier le reste des fichiers
 COPY . .
-RUN npm run build
-# FROM nginx:alpine
-# COPY --from=build /app/build /usr/share/nginx/html
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
-# EXPOSE 80
-# CMD ["nginx", "-g", "daemon off;"]
+
+# Exposer le port sur lequel npm start fonctionne
+EXPOSE 3000
+
+# Lancer l'application
+CMD ["npm", "start"]

@@ -1,0 +1,71 @@
+version: '3.9'
+
+services:
+  # Identity Service
+  identityservice:
+    build: ./identityService
+    container_name: identityservice
+    ports:
+      - "8082:8082"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_identity:5432/identityservice
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - db_identity
+
+  # Portail D'alerte Service
+  portailDalerte:
+    build: ./portailDalerte
+    container_name: portaldalerte
+    ports:
+      - "8083:8083"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_portail:5432/portailDalerte
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - db_portail
+      - identityservice
+
+  # Frontend
+  frontend:
+    build: ./front
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - identityservice
+      - portaldalerte
+
+  # PostgreSQL pour identityService
+  db_identity:
+    image: postgres:15
+    container_name: db_identity
+    environment:
+      POSTGRES_DB: identityservice
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_identity_data:/var/lib/postgresql/data
+
+  # PostgreSQL pour portailDalerte
+  db_portail:
+    image: postgres:15
+    container_name: db_portail
+    environment:
+      POSTGRES_DB: portailDalerte
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5434:5432"
+    volumes:
+      - db_portail_data:/var/lib/postgresql/data
+
+volumes:
+  db_identity_data:
+  db_portail_data:
